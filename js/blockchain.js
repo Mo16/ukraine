@@ -519,7 +519,7 @@ async function mint() {
         await Moralis.switchNetwork("0x1")
 
 
-        var amountOfTokens = parseInt(document.getElementById("numTokens").value)
+        var amountOfTokens = parseInt(document.getElementById("numTokens").innerHTML)
         console.log(amountOfTokens)
 
         const sendOptions = {
@@ -565,7 +565,7 @@ async function mint() {
 
 
 
-        var amountOfTokens = parseInt(document.getElementById("numTokens").value)
+        var amountOfTokens = parseInt(document.getElementById("numTokens").innerText)
         console.log(amountOfTokens)
 
         const sendOptions = {
