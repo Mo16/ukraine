@@ -452,7 +452,7 @@ async function login() {
     await Moralis.User.logOut();
     await Moralis.User.logOut();
     console.log("logged out");
-    if (typeof window.ethereum !== 'undefined') {
+    if (typeof window.ethereum == 'undefined') {
         var user = await Moralis.Web3.authenticate({
             chainId: 1
         });
@@ -491,8 +491,8 @@ async function login() {
             document.getElementById("connect").innerHTML = truncate(account)
             document.getElementById("mint").innerHTML = "Mint"
             document.getElementById("mint").onclick = mint
-            document.getElementsByClassName("onconnect").style.display = "block"
-            document.getElementsByClassName("beforeconnect").style.display = "none"
+            document.getElementById("onconnect").style.display = "block"
+            document.getElementById("beforeconnect").style.display = "none"
 
             console.log(truncate(account))
 
@@ -531,7 +531,7 @@ async function mint() {
                 quantity: amountOfTokens,
             },
         }
-        
+
 
         const NFTcontract = new ethers.Contract(CA, contractABI, web3Provider);
 
@@ -564,27 +564,20 @@ async function mint() {
     } else if (connection == "walletconnect") {
 
 
-        const readOptions = {
-            contractAddress: CA,
-            functionName: "cost",
-            abi: contractABI
-        };
 
-        const mintPrice = await Moralis.executeFunction(readOptions);
-
-
-        var amountOfTokens = parseInt(document.getElementById("numTokens").innerHTML)
-
+        var amountOfTokens = parseInt(document.getElementById("numTokens").value)
+        console.log(amountOfTokens)
 
         const sendOptions = {
             contractAddress: CA,
             functionName: "mint",
             abi: contractABI,
-            msgValue: Moralis.Units.ETH(mintPrice / 10 ** 18 * amountOfTokens),
+            msgValue: Moralis.Units.ETH(0.05 * amountOfTokens),
             params: {
-                _mintAmount: amountOfTokens,
+                quantity: amountOfTokens,
             },
         }
+
 
         const NFTcontract = new ethers.Contract(CA, contractABI, web3Provider);
 
