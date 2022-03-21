@@ -443,7 +443,7 @@ Moralis.start({
 document.getElementById("onconnect").style.display = "none"
 
 function truncate(input) {
-    return `${input.slice(0, 5)}..${input.slice(-4)}`
+    return `${input.slice(0, 5)}...${input.slice(-4)}`
 }
 
 
@@ -489,6 +489,7 @@ async function login() {
             console.log(user.get('ethAddress'))
             account = user.get('ethAddress')
             document.getElementById("connect").innerHTML = truncate(account)
+            document.getElementById("connect").style.backgroundColor = "green"
             document.getElementById("mint").innerHTML = "Mint"
             document.getElementById("mint").onclick = mint
             document.getElementById("onconnect").style.display = "block"
