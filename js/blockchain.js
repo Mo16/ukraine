@@ -489,7 +489,6 @@ async function login() {
             console.log(user.get('ethAddress'))
             account = user.get('ethAddress')
             document.getElementById("connect").innerHTML = truncate(account)
-            document.getElementById("connect").style.backgroundColor = "red"
             document.getElementById("mint").innerHTML = "Mint"
             document.getElementById("mint").onclick = mint
             document.getElementById("onconnect").style.display = "block"
