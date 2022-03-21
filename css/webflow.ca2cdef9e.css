@@ -458,7 +458,7 @@ h1 {
 h2 {
   font-size: 32px;
   line-height: 36px;
-  margin-top: 20px
+  margin-top: -13px
 }
 
 h3 {
@@ -2380,7 +2380,6 @@ textarea.w-select {
     padding-bottom: 15px;
     padding-top: 0;
     margin-top: 70px;
-
   }
 
 }
@@ -2393,7 +2392,7 @@ textarea.w-select {
     padding: 40px 300px;
     height: 100%;
     padding-top: 0;
-    /* margin-top: -50px; */
+    margin-top: 80px;
   
   }
   
@@ -2417,8 +2416,9 @@ textarea.w-select {
 }
 
 .square-img {
-  margin-top: -120px;
+  margin-top: -90px;
   top: 0;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .flex-rectangle:before {
