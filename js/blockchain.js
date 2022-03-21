@@ -443,7 +443,7 @@ Moralis.start({
 document.getElementById("onconnect").style.display = "none"
 
 function truncate(input) {
-    return `${input.slice(0, 3)}..${input.slice(-3)}`
+    return `${input.slice(0, 5)}...${input.slice(-4)}`
 }
 
 
