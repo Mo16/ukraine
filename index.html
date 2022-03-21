@@ -131,6 +131,7 @@
                      </div>
                      <div class="onconnect" id="onconnect">
                         <div class="row centered" style="text-align: center; width: 43%; margin: 0px auto 18px;">
+                           <span >Price: <span class="price">0.05</span></span>
 
                            <div class="wrapper centered">
                               <span class="minus">-</span>
@@ -482,17 +483,22 @@
             <script>
                const plus = document.querySelector(".plus"),
                 minus = document.querySelector(".minus"),
-                num = document.querySelector(".numTokens");
+                num = document.querySelector(".numTokens"),
+                value = document.querySelector(".price");
                 let a = 1;
+                let price = 0.05
                 plus.addEventListener("click", ()=>{
                   a++;
                   num.innerText = a;
+                  value.innerText = (price * a).toFixed(2)
                 });
             
                 minus.addEventListener("click", ()=>{
                   if(a > 1){
                     a--;
                     num.innerText = a;
+                     value.innerText = (price * a).toFixed(2)
+
                   }
                 });
             
