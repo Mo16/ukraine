@@ -2305,6 +2305,32 @@ textarea.w-select {
   font-family: 'Montserrat', sans-serif;
 
 }
+.wrapper{
+  text-align: center  ;
+  height: 40px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF;
+  border-radius: 12px;
+  margin: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.wrapper span{
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.wrapper span.numTokens{
+  font-size: 30px;
+  border-right: 2px solid rgba(0,0,0,0.2);
+  border-left: 2px solid rgba(0,0,0,0.2);
+  pointer-events: none;
+}
 
 .home {
   background-image: url('../images/bg.png');
