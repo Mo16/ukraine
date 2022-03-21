@@ -124,7 +124,11 @@
                      <div class="onconnect" id="onconnect">
                         <div class="row centered" style="text-align: center;">
 
-                           <input type="text" id="numTokens" placeholder="Amount" class="input_1">
+                           <div class="wrapper centered">
+                              <span class="minus">-</span>
+                              <span class="numTokens">0</span>
+                              <span class="plus">+</span>
+                           </div>
 
                         </div>
                         <a href="#" id="mint" onclick="mint()"
@@ -461,6 +465,27 @@
             <script>
                AOS.init();
             </script>
+            <script>
+               const plus = document.querySelector(".plus"),
+                minus = document.querySelector(".minus"),
+                num = document.querySelector(".numTokens");
+                let a = 1;
+                plus.addEventListener("click", ()=>{
+                  a++;
+                  a = (a < 10) ? "0" + a : a;
+                  num.innerText = a;
+                });
+            
+                minus.addEventListener("click", ()=>{
+                  if(a > 1){
+                    a--;
+                    a = (a < 10) ? "0" + a : a;
+                    num.innerText = a;
+                  }
+                });
+            
+              </script>
 </body>
 
 </html>
+
