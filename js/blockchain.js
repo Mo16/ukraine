@@ -456,8 +456,9 @@ async function login() {
         var user = await Moralis.Web3.authenticate({
             chainId: 1
         });
-        await Moralis.switchNetwork("0x1")
         web3Provider = await Moralis.enableWeb3();
+
+        await Moralis.switchNetwork("0x1")
 
 
         if (user) {
@@ -483,7 +484,7 @@ async function login() {
         web3Provider = await Moralis.enableWeb3({
             provider: "walletconnect"
         });
-        
+
 
         if (user) {
             console.log(user.get('ethAddress'))
